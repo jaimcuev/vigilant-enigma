@@ -5,8 +5,8 @@ import { TransaccionModule } from './transaccion/transaccion.module';
 import { VerificarSesionComponent } from './verificar-sesion/verificar-sesion.component';
 
 const routes: Routes = [
+  { path: '', component: VerificarSesionComponent },
   { path: 'inicio', component: InicioComponent },
-  { path: 'verificar-sesion', component: VerificarSesionComponent },
   {
     path: 'login',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
