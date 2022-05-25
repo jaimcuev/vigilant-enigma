@@ -1,0 +1,28 @@
+<div [formGroup]="formulario">
+    <div formGroupName="cuenta">
+        <div class="form-group">
+            <label for="cuentaOrigen">Cuenta de origen</label>
+            <input type="text" class="form-control" id="cuentaOrigen" formControlName="cuentaOrigen"
+                    placeholder="Elige tu cuenta de origen" required>
+        </div>
+        <div class="form-group">
+            <label for="cuentaDestino">Cuenta de destino</label>
+            <input type="text" class="form-control" id="cuentaDestino" formControlName="cuentaDestino"
+                    placeholder="Ingresa tu cuenta de destino" required>
+        </div>
+        <div class="two-columns">
+            <div class="form-group">
+                <label for="moneda">Moneda</label>
+                <select class="form-control" id="moneda" 
+                    formControlName="moneda" required>
+                    <option value="PEN" selected>S/.</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="monto">Monto a transferir</label>
+                <input type="number" class="form-control" id="monto" formControlName="monto"
+                    placeholder="Ingresa el monto" required>
+            </div>
+        </div>
+    </div>
+</div>

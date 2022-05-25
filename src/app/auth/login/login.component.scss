@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  gap: 10px;
+}
+
+.col-2 {
+  grid-column: 2;
+}
+
+.row-2 {
+  justify-self: center;
+  grid-row: 2;
+}
+
+.row-3 {
+  grid-row: 2;
+}

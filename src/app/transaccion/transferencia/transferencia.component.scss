@@ -1,0 +1,19 @@
+.box {
+    border: 1px solid #ededed;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    .box-label {
+        margin: 0;
+        position: absolute;
+        top: -6px;
+        left: 6px;
+        height: 12px;
+        line-height: 12px;
+        background: #fff;
+        padding: 0 10px;
+    }
+    .font-weight-bold {
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="col-1">
+    <img src="" alt="Imagen Login BCP" />
+  </div>
+  <div class="col-2">
+    <p>Banca por Internet</p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="cardNumber">Número de tarjeta</label>
+      <input
+        type="text"
+        name="cardNumber"
+        id="cardNumber"
+        formControlName="cardNumber"
+      />
+      <div class="row-2">
+        <label for="recCard">Recordar Tarjeta</label>
+        <input type="checkbox" name="recCard" id="recCard" />
+      </div>
+      <div class="row-3">
+        <label for="password">Clave de Internet de 6 dígitos</label>
+        <input type="password" name="password" id="password" formControlName="password" />
+        <div id="VirtualKey">
+          <input id="btn1" type="button" value="1" onclick="inputNum(this.value);" />
+          <input id="btn2" type="button" value="2" onclick="inputNum(this);" />
+          <input id="btn3" type="button" value="3" onclick="inputNum(this);" />
+          <br />
+          <input id="btn4" type="button" value="4" onclick="inputNum(this);" />
+          <input id="btn5" type="button" value="5" onclick="inputNum(this);" />
+          <input id="btn6" type="button" value="6" onclick="inputNum(this);" />
+          <br />
+          <input id="btn7" type="button" value="7" onclick="inputNum(this);" />
+          <input id="btn8" type="button" value="8" onclick="inputNum(this);" />
+          <input id="btn9" type="button" value="9" onclick="inputNum(this);" />
+          <br />
+          <input id="btn0" type="button" value="0" onclick="inputNum(this)" />
+          <input id="btnDel" type="button" value="X" onclick="delNum();" />
+        </div>
+      </div>
+      <button type="submit" [disabled]="!loginForm.valid">Ingresar</button>
+    </form>
+  </div>
+</div>

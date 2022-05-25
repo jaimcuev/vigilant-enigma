@@ -1,0 +1,27 @@
+<div class="steps">
+    <div *ngFor="let step of steps" class="step {{ step.id === currentStep ? 'active' : '' }}">
+        <div class="number">{{ step.id }}</div>
+        <div class="name">{{ step.name }}</div>
+    </div>
+</div>
+<div class="page-header">
+    <h2>Transferencia a otra cuenta del BCP</h2>
+    <p>Ingresa los datos y completa las opciones para continuar</p>
+</div>
+<section>
+    <app-cuentas 
+        *ngIf="currentStep === 1" 
+        [formulario]="formulario">
+    </app-cuentas>
+    <app-transferencia 
+        *ngIf="currentStep === 2" 
+        [formulario]="formulario">
+    </app-transferencia>
+    <app-resumen 
+        *ngIf="currentStep === 3">
+    </app-resumen>
+    <div class="actions">
+        <button (click)="onClickVolver()">Volver</button>
+        <button (click)="onSubmit()">Continuar</button>
+    </div>
+</section>
