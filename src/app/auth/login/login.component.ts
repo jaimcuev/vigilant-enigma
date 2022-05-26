@@ -25,7 +25,10 @@ export class LoginComponent implements OnInit {
   ]);
   loginForm = new FormGroup({});
 
-  constructor(private formBuilder: FormBuilder, private geolocalizacionService: GeolocalizacionService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private geolocalizacionService: GeolocalizacionService
+  ) {
     this.geolocalizacionService.solicitarGeolocalizacion();
   }
 
@@ -45,10 +48,10 @@ export class LoginComponent implements OnInit {
   }
   delNum() {
     this.password.patchValue(
-      this.password.value.substring(
-        0,
-        this.password.value.length - 1
-      )
+      this.password.value.substring(0, this.password.value.length - 1)
     );
+  }
+  delAll() {
+    this.password.setValue('');
   }
 }
