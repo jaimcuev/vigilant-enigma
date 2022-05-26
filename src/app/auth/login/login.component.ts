@@ -5,6 +5,7 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
+import { GeolocalizacionService } from 'src/app/geolocalizacion.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,9 @@ export class LoginComponent implements OnInit {
   ]);
   loginForm = new FormGroup({});
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private geolocalizacionService: GeolocalizacionService) {
+    this.geolocalizacionService.solicitarGeolocalizacion();
+  }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
