@@ -3,12 +3,14 @@
     <img src="" alt="Imagen Login BCP" />
   </div>
   <div class="col-2">
-    <p>Banca por Internet</p>
+    <h2 class="mb-8 mt-16 text-blue-800 font-bold text-2xl">Banca por Internet</h2>
+
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <label for="cardNumber">Número de tarjeta</label>
       <input
         type="text"
         name="cardNumber"
+        class="border rounded-lg w-full py-2 px-2" 
         id="cardNumber"
         formControlName="cardNumber"
       />
@@ -18,25 +20,27 @@
       </div>
       <div class="row-3">
         <label for="password">Clave de Internet de 6 dígitos</label>
-        <input type="password" name="password" id="password" formControlName="password"/>
-        <div id="VirtualKey">
-          <input id="btn1" type="button" value="1" #btn1 (click)="inputNum(btn1.value);" />
-          <input id="btn2" type="button" value="2" #btn2 (click)="inputNum(btn2.value);" />
-          <input id="btn3" type="button" value="3" #btn3 (click)="inputNum(btn3.value);" />
+        <input class="border rounded-lg w-full py-2 px-2" type="password" name="password" id="password" formControlName="password"/>
+        <div id="VirtualKey" class="mt-4">
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btn1" type="button" value="1" #btn1 (click)="inputNum(btn1.value);" />
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btn2" type="button" value="2" #btn2 (click)="inputNum(btn2.value);" />
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btn3" type="button" value="3" #btn3 (click)="inputNum(btn3.value);" />
           <br />
-          <input id="btn4" type="button" value="4" #btn4 (click)="inputNum(btn4.value);" />
-          <input id="btn5" type="button" value="5" #btn5 (click)="inputNum(btn5.value);" />
-          <input id="btn6" type="button" value="6" #btn6 (click)="inputNum(btn6.value);" />
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btn4" type="button" value="4" #btn4 (click)="inputNum(btn4.value);" />
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btn5" type="button" value="5" #btn5 (click)="inputNum(btn5.value);" />
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btn6" type="button" value="6" #btn6 (click)="inputNum(btn6.value);" />
           <br />
-          <input id="btn7" type="button" value="7" #btn7 (click)="inputNum(btn7.value);" />
-          <input id="btn8" type="button" value="8" #btn8 (click)="inputNum(btn8.value);" />
-          <input id="btn9" type="button" value="9" #btn9 (click)="inputNum(btn9.value);" />
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btn7" type="button" value="7" #btn7 (click)="inputNum(btn7.value);" />
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btn8" type="button" value="8" #btn8 (click)="inputNum(btn8.value);" />
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btn9" type="button" value="9" #btn9 (click)="inputNum(btn9.value);" />
           <br />
-          <input id="btn0" type="button" value="0" #btn0 (click)="inputNum(btn0.value)" />
-          <input id="btnDel" type="button" value="X" (click)="delNum();" />
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btn0" type="button" value="0" #btn0 (click)="inputNum(btn0.value)" />
+          <input class="border bg-slate-400 px-4 py-1 text-white rounded" id="btnDel" type="button" value="X" (click)="delNum();" />
         </div>
       </div>
-      <button type="submit" routerLink="/inicio">Ingresar</button>
+      <button type="button" class="px-8 py-3 text-white bg-orange-400 rounded-full mt-8" routerLink="/inicio">
+        Ingresar
+    </button>
     </form>
   </div>
 </div>
