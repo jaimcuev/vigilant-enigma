@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,31 +12,40 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup = new FormGroup({
-    cardNumber: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(9),
-    ]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(6),
-      Validators.maxLength(6),
-    ]),
-  });
+  cardNumber = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(9),
+  ]);
+  password = new FormControl('', [
+    Validators.required,
+    Validators.minLength(6),
+    Validators.maxLength(6),
+  ]);
+  loginForm = new FormGroup({});
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      cardNumber: this.cardNumber,
+      password: this.password,
+    });
+  }
 
   onSubmit() {
     console.log(this.loginForm.value);
   }
 
   inputNum(num: any) {
-    console.log(num);
-    
-    // this.loginForm.value.password = this.loginForm.value.password + num.value;
+    this.password.patchValue(this.password.value + num);
   }
-  delNum() {}
+  delNum() {
+    this.password.patchValue(
+      this.password.value.substring(
+        0,
+        this.password.value.length - 1
+      )
+    );
+  }
 }
