@@ -1,59 +1,7 @@
-
-.columnTop {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 50px;
-  background-color:whitesmoke;
-} 
-
-.column1 {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 800px;
-  background-color:whitesmoke;
+.bg {
+  background-image: url("https://loginunico.viabcp.com/assets/img/ciam/YM.jpg"), url("https://loginunico.viabcp.com/assets/img/ciam/bydefault.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
 }
-
-.btn {
-  line-height: 1.5;
-  padding: 0 20px;
-  font-size: 1rem;
-  text-align: center;
-  margin-left: 38%;
-}
-
-.column2 {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 800px;
-  align-content: center;
-  background-color:whitesmoke;  
-} 
-
-.tableCenter{
-  margin-top: 35%;
-  margin-left: 35%;
-}
-
-.checklistFormat {
-  width: 8%;
-  background-color: whitesmoke;
-}
-
-* {
-    box-sizing: border-box;
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-
-
-
-
-
