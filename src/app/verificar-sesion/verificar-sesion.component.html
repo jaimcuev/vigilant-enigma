@@ -1,36 +1,41 @@
-<body bgcolor="whitesmoke">
-
-    <div class="row">       
-        <div class="columnTop">
-            <h2>   
-            </h2>  
+<div class="grid grid-cols-3 grid-flow-col h-screen">
+    <div class="bg"></div>
+    <div class="col-span-2 p-4 flex flex-col justify-between  h-screen">
+        <div>
+            <div class="flex justify-end text-slate-500">
+                <p class="paragraph-md bcp-font-regular text">Esta ventana se cerrará en&nbsp; </p>
+                <p class="paragraph-md bcp-font-regular text bar-blue"> 212 segundos &nbsp;</p>
+            </div>
+            <div class="flex flex-col justify-center items-center">
+                <h2 class="mb-8 mt-16 text-blue-800 font-bold text-2xl">Mi Negocio BCP</h2>
+                <form class="w-2/5">
+                    <div class="flex justify-center mb-8 space-x-4">
+                        <div>
+                            <input type="radio" name="type" id="persona" name="tipo" checked> 
+                            <label for="persona"> Persona</label> 
+                        </div>
+                        <div>
+                            <input type="radio" name="type" id="empresa" name="tipo">
+                            <label for="empresa"> Empresa</label>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg flex">
+                        <select class="px-2">
+                            <option value="DNI">DNI</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                        </select>
+                        <input class="flex-1 px-3 py-3 border-0 rounded-lg" inputmode="numeric" autocomplete="numeroDocumento" type="text" 
+                            maxlength="8" placeholder="Nro de documento">
+                    </div>
+                    <button type="button" class="px-8 py-3 text-white w-full bg-orange-400 rounded-full mt-8" routerLink="/login">
+                        Continuar
+                    </button>
+                </form>
+            </div>
         </div>
-        <div class="columnTop">
-            <h3 style="margin-left: 55%">Esta ventana se cerrará en 72 segundos</h3>   
+        <div class="text-xs text-slate-500 text-center">
+            <p> Esta es una página segura del BCP. Si tienes dudas sobre la autenticidad de la web, comunícate con nosotros al 311-9898 o a través de nuestros medios digitales.</p>
+            <p>Todos los derechos reservados   |   © 2020 VIABCP.com </p>
         </div>
     </div>
-
-    <div class="row">       
-        <div class="column1">
-            <p style="margin-top: 15%"><img src="https://www.viabcp.com/wcm/connect/17bb49b7-9ecf-4d37-a057-9fedb5710125/bottom_img.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-17bb49b7-9ecf-4d37-a057-9fedb5710125-nD8DbP6" width="100%" /></p>
-            <button class="btn" type="button" name="btnVolver">
-                < Volver            
-            </button> 
-        </div>
-        <div class="column2">
-            <h2 class="tableCenter">Mi negocio BCP</h2>
-            <input style="margin-left: 35%" type="radio" name="type" id="type1"> <label for="type1"> Persona</label> <input type="radio" name="type" id="type2"> <label for="type2"> Empresa</label>
-            <br> <br> <br>
-            <input style="margin-left: 30%" list="list-doc-type" id="doctype" name="doctype" class="checklistFormat" />
-            <datalist id="list-doc-type">
-                <option value="DNI">
-                <option value="Pasaporte">
-            </datalist>
-            <input type="text" id="doctypetxt" name="doctypetxt" required minlength="9" maxlength="8" size="9" style="width: 20%">
-            <br> <br> <br>
-            <button style="margin-left: 38%" class="btn" type="button" name="btnNext" routerLink="/login">
-                Continuar
-            </button>
-        </div>
-    </div>
-</body>
+</div>

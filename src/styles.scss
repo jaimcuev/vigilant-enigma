@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Flexo";
+    src: url(./assets/fonts/Flexo-Regular.woff);
+}
+
+@font-face {
+    font-family: "Flexo";
+    src: url(./assets/fonts/Flexo-Bold.woff);
+    font-weight: bold;
+}
+
+body,
+html {
+    font-family: Flexo, sans-serif;
+}
