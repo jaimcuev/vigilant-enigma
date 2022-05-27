@@ -35,15 +35,15 @@ export class LoginComponent implements OnInit {
       cardNumber: this.cardNumber,
       password: this.password,
     });
+    this.VerifyService.response.subscribe(x => {
+      if(x && x.access_token){
+        this.router.navigate(['/inicio'])
+      }
+    });
   }
 
   onSubmit() {
-    this.VerifyService.login( this.loginForm.value.cardNumber,this.loginForm.value.password ).subscribe(x => {
-      if(x.access_token){
-        this.VerifyService.setReponse(x);
-        this.router.navigate(['/inicio'])
-      }
-    })
+    this.VerifyService.login( this.loginForm.value.cardNumber,this.loginForm.value.password );
   }
 
   inputNum(num: any) {

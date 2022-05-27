@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { VerifyService } from '../services/verify.service';
 
 @Component({
   selector: 'app-verificar-sesion',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerificarSesionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private verifyService: VerifyService, private router: Router) {
+    if (this.verifyService.isLogged()) {
+      this.router.navigate(['/inicio']);
+    }
+  }
 
   ngOnInit(): void {
   }
-
 }
