@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { GeolocalizacionService } from 'src/app/geolocalizacion.service';
+import { VerifyService } from '../../services/verify.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -27,8 +24,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private geolocalizacionService: GeolocalizacionService
-  ) {
+    private geolocalizacionService: GeolocalizacionService,
+    private VerifyService: VerifyService,
+    private router :Router  ) {
     this.geolocalizacionService.solicitarGeolocalizacion();
   }
 
@@ -40,7 +38,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loginForm.value);
+    this.VerifyService.login( this.loginForm.value.cardNumber,this.loginForm.value.password ).subscribe(x => {
+      if(x.access_token){
+        this.VerifyService.setReponse(x);
+        this.router.navigate(['/inicio'])
+      }
+    })
   }
 
   inputNum(num: any) {
